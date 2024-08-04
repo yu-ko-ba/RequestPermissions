@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
 }
 
-group = "io.github.yukoba.requestpermissions"
+group = "com.github.yu-ko-ba"
 
 android {
     namespace = "io.github.yukoba.requestpermissions"
@@ -59,14 +59,11 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            register<MavenPublication>("release") {
-                groupId = "io.github.yu-ko-ba"
-                artifactId = "request-permissions"
-                version = "v0.1.3"
-
-                afterEvaluate {
-                    from(components["release"])
-                }
+            register<MavenPublication>("maven") {
+                from(components["release"])
+                groupId = "com.github.yu-ko-ba"
+                artifactId = "RequestPermissions"
+                version = "0.1.4"
             }
         }
     }
