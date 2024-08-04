@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    `maven-publish`
 }
 
 android {
@@ -12,6 +14,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        aarMetadata {
+            minCompileSdk = 21
+        }
     }
 
     buildTypes {
@@ -30,6 +36,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 dependencies {
@@ -40,4 +52,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "io.github.yu-ko-ba"
+            artifactId = "request-permissions"
+            version = "0.1.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }
