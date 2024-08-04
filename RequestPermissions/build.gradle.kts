@@ -59,7 +59,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "io.github.yu-ko-ba"
             artifactId = "request-permissions"
-            version = "0.1.0"
+            version = "v0.1.1"
 
             afterEvaluate {
                 from(components["release"])
