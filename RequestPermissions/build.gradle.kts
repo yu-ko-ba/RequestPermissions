@@ -5,6 +5,9 @@ plugins {
     `maven-publish`
 }
 
+apply(plugin = "com.android.library")
+apply(plugin = "maven-publish")
+
 group = "com.github.yu-ko-ba"
 
 android {
@@ -59,11 +62,11 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            register<MavenPublication>("maven") {
+            register<MavenPublication>("release") {
                 from(components["release"])
                 groupId = "com.github.yu-ko-ba"
                 artifactId = "RequestPermissions"
-                version = "0.1.5"
+                version = "0.1.6"
             }
         }
     }
