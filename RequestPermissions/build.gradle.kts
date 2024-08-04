@@ -56,15 +56,17 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "io.github.yukoba"
-            artifactId = "request-permissions"
-            version = "v0.1.2"
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                groupId = "io.github.yu-ko-ba"
+                artifactId = "request-permissions"
+                version = "v0.1.3"
 
-            afterEvaluate {
-                from(components["release"])
+                afterEvaluate {
+                    from(components["release"])
+                }
             }
         }
     }
