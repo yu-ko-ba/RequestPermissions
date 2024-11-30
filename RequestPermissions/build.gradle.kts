@@ -66,7 +66,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.yu-ko-ba"
                 artifactId = "RequestPermissions"
-                version = "0.1.6"
+                version = "0.0.1"
             }
         }
     }
