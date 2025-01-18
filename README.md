@@ -2,20 +2,22 @@
 
 ## Installation
 settings.gradle.kts
-```settings.gradle.kts
+```diff
 dependencyResolutionManagement {
     ...
     repositories {
         ...
+
 +       maven { setUrl("https://jitpack.io") }
     }
 }
 ```
 
-build.gradle.kts
-```app/build.gradle.kts
+app/build.gradle.kts
+```diff
 dependencies {
     ...
+
 +   implementation("com.github.yu-ko-ba:RequestPermissions:0.0.1")
 }
 ```
