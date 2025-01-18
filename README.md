@@ -21,7 +21,7 @@ dependencies {
 ```
 
 ## Example
-MainActivity.kt
+[MainActivity.kt](https://github.com/yu-ko-ba/RequestPermissions/blob/main/app/src/main/java/io/github/yukoba/requestpermissions/MainActivity.kt)
 ```MainActivity.kt
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
