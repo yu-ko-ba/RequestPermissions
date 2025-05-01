@@ -18,7 +18,7 @@ app/build.gradle.kts
 dependencies {
     ...
 
-+   implementation("com.github.yu-ko-ba:RequestPermissions:0.0.1")
++   implementation("com.github.yu-ko-ba:RequestPermissions:0.0.2")
 }
 ```
 
